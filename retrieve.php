@@ -29,14 +29,25 @@
 		</thead>
 
 		<tbody>
+			<?php $x = 0; ?>
 			<?php foreach($products as $product): ?>
 				<tr>
-					<td><?php echo $product['productId']; ?></td>
-					<td><?php echo $product['productName']; ?></td>
-					<td><?php echo "R$ " . $product['productPrice']; ?></td>
-					<td><?php echo $product['productDescription']; ?></td>
-					<td><a href="update.php?id=<?= $product['productId']; ?>"><span class="text-success glyphicon glyphicon-edit"></span></a></td>
-					<td><a href="delete.php?id=<?= $product['productId']; ?>"><span class="text-danger glyphicon glyphicon-trash"></span></a></td>
+					<td><?= $x += 1; ?></td>
+					<td><?= $product['productName']; ?></td>
+					<td><?= "R$ " . $product['productPrice']; ?></td>
+					<td><?= $product['productDescription']; ?></td>
+					<td width="120">
+						<form action="update.php" method="post" accept-charset="utf-8">
+							<input type="hidden" name="id" value="<?= $product['productId']; ?>" />
+							<input type="submit" class="btn btn-warning  btn-group-justified" value="Edit" />
+						</form>
+					</td>
+					<td width="120">
+						<form action="delete.php" method="post" accept-charset="utf-8">
+							<input type="hidden" name="id" value="<?= $product['productId']; ?>" />
+							<input type="submit" class="btn btn-danger  btn-group-justified" value="Remove" />
+						</form>
+					</td>
 				</tr>
 			<?php endforeach ?>
 		</tbody>

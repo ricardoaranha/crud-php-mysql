@@ -4,7 +4,7 @@
 	include('config/dbconfig.php');
 	include('functions/productsFunctions.php');
 
-	$id = $_GET['id'];
+	$id = $_POST['id'];
 
 	deleteProducts($conection, $id);
 
