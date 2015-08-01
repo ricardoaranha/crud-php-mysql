@@ -7,8 +7,9 @@
 	$id = $_GET['id'];
 	$product = $_POST['product'];
 	$price = $_POST['price'];
+	$description = $_POST['description'];
 
-	if(updateProducts($conection, $id, $product, $price)) {
+	if(updateProducts($conection, $id, $product, $price, $description)) {
 
 		header("Location: retrieve.php?updated=true");
 
@@ -25,6 +26,7 @@
 		<form action="update.php?id=<?= $id; ?>" method="post" accept-charset="utf-8">
 			<input type="text" class="form-control" name="product" placeholder="Product" /><br />
 			<input type="number" step="0.01" class="form-control" name="price" placeholder="Price" /><br />
+			<textarea name="description" class="form-control" placeholder="Description"></textarea><br />
 			<input type="submit" value="Upadte" class="btn btn-success btn-group-justified" />
 		</form>
 	</div>

@@ -15,21 +15,22 @@ function retrieveProducts($conection) {
 
 }
 
-function createProducts($conection, $product, $price) {
+function createProducts($conection, $product, $price, $description) {
 
 	$query = "insert into 
-				tblproducts (productName, productPrice) 
-				values ('{$product}',{$price})";
+				tblproducts (productName, productPrice, productDescription) 
+				values ('{$product}', {$price}, '{$description}')";
 
 	return mysqli_query($conection, $query);
 
 }
 
-function updateProducts($conection, $id, $product, $price) {
+function updateProducts($conection, $id, $product, $price, $description) {
 
 	$query = "update tblproducts set 
 				productName = '{$product}',
-				productPrice = {$price}
+				productPrice = {$price},
+				productDescription = '{$description}'
 				where productId = {$id}";
 
 	return mysqli_query($conection, $query);

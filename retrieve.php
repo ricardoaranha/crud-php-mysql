@@ -23,8 +23,8 @@
 				<th>#</th>
 				<th>Product</th>
 				<th>Price</th>
-				<th>Edit</th>
-				<th>Remove</th>
+				<th>Description</th>
+				<th colspan="2">Actions</th>
 			</tr>
 		</thead>
 
@@ -34,6 +34,7 @@
 					<td><?php echo $product['productId']; ?></td>
 					<td><?php echo $product['productName']; ?></td>
 					<td><?php echo "R$ " . $product['productPrice']; ?></td>
+					<td><?php echo $product['productDescription']; ?></td>
 					<td><a href="update.php?id=<?= $product['productId']; ?>"><span class="text-success glyphicon glyphicon-edit"></span></a></td>
 					<td><a href="delete.php?id=<?= $product['productId']; ?>"><span class="text-danger glyphicon glyphicon-trash"></span></a></td>
 				</tr>

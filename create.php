@@ -6,8 +6,9 @@
 
 	$product = $_POST['product'];
 	$price = $_POST['price'];
+	$description = $_POST['description'];
 
-	if(createProducts($conection, $product, $price)) {
+	if(createProducts($conection, $product, $price, $description)) {
 
 		header("Location: retrieve.php?created=true");
 
@@ -24,6 +25,7 @@
 		<form action="create.php" method="post" accept-charset="utf-8">
 			<input type="text" class="form-control" name="product" placeholder="Product" required /><br />
 			<input type="number" step="0.01" class="form-control" name="price" placeholder="Price" required /><br />
+			<textarea name="description" class="form-control" placeholder="Description"></textarea><br />
 			<input type="submit" value="Register" class="btn btn-success btn-group-justified" />
 		</form>
 	</div>
