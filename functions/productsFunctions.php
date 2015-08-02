@@ -36,6 +36,18 @@ function createProducts($conection, $product, $price, $description, $category) {
 
 }
 
+function searchProduct($conection, $id) {
+
+	$query = mysqli_query($conection, 
+		"select * from tblproducts 
+		inner join tblcategorys
+		on tblproducts.categoryId = tblcategorys.categoryId
+		where productId = {$id}");
+
+	return mysqli_fetch_assoc($query);
+
+}
+
 function updateProducts($conection, $id, $product, $price, $description, $category) {
 
 	$query = "update tblproducts set 

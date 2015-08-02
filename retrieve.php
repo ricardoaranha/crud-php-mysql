@@ -18,7 +18,7 @@
 	} else if($_GET['updated'] && $_GET['updated'] == true) { 
 
 		echo "<p align='center' class='alert alert-success'>Product was successfully updated!</p>";
-		
+
 	} 
 
 ?>
@@ -47,7 +47,7 @@
 				<td><?= $product['productDescription']; ?></td>
 				<td width="120">
 					<form action="update.php" method="post" accept-charset="utf-8">
-						<input type="hidden" name="id" value="<?= $product['productId']; ?>" />
+						<input type="hidden" name="productId" value="<?= $product['productId']; ?>" />
 						<input type="submit" class="btn btn-warning btn-group-justified" value="Edit" />
 					</form>
 				</td>
