@@ -1,7 +1,7 @@
 <?php 
 
 	include('template/header.php');
-	include('config/dbconfig.php');
+	include('config/dbConfig.php');
 	include('functions/productsFunctions.php');
 
 	$id = $_POST['id'];
