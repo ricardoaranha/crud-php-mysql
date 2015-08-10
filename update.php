@@ -29,8 +29,8 @@
 
 ?>
 
-	<div class="col-lg-4"></div>
-	<div class="col-lg-4">
+	<div class="col-lg-3"></div>
+	<div class="col-lg-6">
 		<h1 align="center">Edit Product</h1>
 		<hr />
 		<form action="update.php" method="post" accept-charset="utf-8">
@@ -52,6 +52,6 @@
 			<input type="submit" value="Save" class="btn btn-success btn-group-justified" />
 		</form>
 	</div>
-	<div class="col-lg-4"></div>
+	<div class="col-lg-3"></div>
 
 <?php include('template/footer.php'); ?>
