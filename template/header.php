@@ -24,6 +24,10 @@
 					<li role="presentation"><a href="retrieve.php">Products List</a></li>
 					<li role="presentation"><a href="create.php">Register Products</a></li>
 				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li role="presentation"><a href="logout.php" class="navbar-link"><span class="glyphicon glyphicon-off"></span></a></li>
+				</ul>
 			</div>
 		</div>
 	</div>

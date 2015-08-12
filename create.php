@@ -4,6 +4,9 @@
 	include('config/dbConfig.php');
 	include('functions/productsFunctions.php');
 	include('functions/categorysFunctions.php');
+	include('functions/sessionFunctions.php');
+
+	verifyUser();
 
 	$categorys = retrieveCategorys($conection);
 

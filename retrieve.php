@@ -3,6 +3,9 @@
 	include('template/header.php');
 	include('config/dbConfig.php');
 	include('functions/productsFunctions.php');
+	include('functions/sessionFunctions.php');
+
+	verifyUser();
  
 	$products = retrieveProducts($conection);
 

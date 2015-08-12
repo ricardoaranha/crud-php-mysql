@@ -1,5 +1,10 @@
-<?php include('template/header.php'); ?>
-<?php include('config/dbConfig.php'); ?>
+<?php
+
+	include('template/header.php');
+	include('config/dbConfig.php');
+	include('functions/sessionFunctions.php'); 
+
+?>
 
 	<div class="col-lg-3"></div>
 	<div class="col-lg-6">
@@ -10,8 +15,8 @@
 		<?php } ?>
 
 		<h1 align="center">Welcome!</h1>
-		<?php if(isset($_COOKIE['loggedUser'])) { ?>
-		<p class="text-success" align="center">You are now logged as <?=$_COOKIE['loggedUser'];?></p>
+		<?php if(loggedUser()) { ?>
+		<p class="text-success" align="center">You are now logged as <?=$_SESSION['loggedUser'];?></p>
 		<?php } else { ?>
 		<h2 align="center">Login</h1>
 		<hr />
