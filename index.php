@@ -8,12 +8,6 @@
 
 	<div class="col-lg-3"></div>
 	<div class="col-lg-6">
-		<?php if(isset($_GET['login']) && $_GET['login'] == 1) { ?>
-		<p align='center' class='alert alert-success'>Logged with success!</p>
-		<?php } else if(isset($_GET['login']) && $_GET['login'] == 0) { ?>
-		<p align='center' class='alert alert-danger'>Email or password invalid, please try again!</p>
-		<?php } ?>
-
 		<h1 align="center">Welcome!</h1>
 		<?php if(loggedUser()) { ?>
 		<p class="text-success" align="center">You are now logged as <?=$_SESSION['loggedUser'];?></p>

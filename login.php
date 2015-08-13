@@ -9,13 +9,17 @@
 
 	if($user == null) {
 
-		header("Location: index.php?login=0");
+		$_SESSION['danger'] = "Email or password invalid, please try again!";
+
+		header("Location: index.php");
 
 	} else {
 		
 		conectUser($user['userEmail']);
+
+		$_SESSION['success'] = "Logged with success!";
 		
-		header("Location: index.php?login=1");
+		header("Location: index.php");
 
 	}
 

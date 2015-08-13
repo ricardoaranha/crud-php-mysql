@@ -24,7 +24,9 @@
 
 	if(updateProducts($conection, $id, $product, $price, $description, $category)) {
 
-		header("Location: retrieve.php?updated=true");
+		$_SESSION['success'] = "Product was successfully updated!";
+
+		header("Location: retrieve.php");
 
 		die();
 		

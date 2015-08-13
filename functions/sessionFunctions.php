@@ -12,7 +12,9 @@
 
 		if(!userIsLogged()) {
 
-			header("Location: index.php?securityFailure=true");
+			$_SESSION['danger'] = "You don't have access, please log in.";
+
+			header("Location: index.php");
 
 			die();
 
@@ -35,5 +37,7 @@
 	function logout() {
 
 		session_destroy();
+
+		session_start();
 
 	}

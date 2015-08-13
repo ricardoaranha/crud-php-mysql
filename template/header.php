@@ -1,3 +1,7 @@
+<?php include('functions/alertsFunctions.php'); 
+	error_reporting(E_ALL ^ E_NOTICE);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,4 +38,9 @@
 
 	<div class="container">
 		<div id="principal">
+
+		<?php
+			showAlert("success");
+			showAlert("danger");
+		?>
 		

@@ -17,7 +17,9 @@
 
 	if(createProducts($conection, $product, $price, $description, $category)) {
 
-		header("Location: retrieve.php?created=true");
+		$_SESSION['success'] = "Product was successfully created!";
+
+		header("Location: retrieve.php");
 
 		die();
 		

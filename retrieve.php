@@ -9,25 +9,10 @@
  
 	$products = retrieveProducts($conection);
 
-
-	if($_GET['removed'] && $_GET['removed'] == true) { 
-
-		echo "<p align='center' class='alert alert-success'>Product was successfully removed!</p>";
-
-	} else if($_GET['created'] && $_GET['created'] == true) { 
-
-		echo "<p align='center' class='alert alert-success'>Product was successfully created!</p>";
-
-	} else if($_GET['updated'] && $_GET['updated'] == true) { 
-
-		echo "<p align='center' class='alert alert-success'>Product was successfully updated!</p>";
-
-	} 
-
 ?>
 
 	<table class="table table-hover">
-		<caption>Products</caption>
+		<caption>PRODUCTS</caption>
 		<thead>
 			<tr>
 				<th>#</th>

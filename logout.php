@@ -4,6 +4,8 @@
 
 	logout();
 
-	header("Location: index.php?logout=true");
+	$_SESSION['success'] = "Desconected with success!";
+
+	header("Location: index.php");
 
 	die();
