@@ -2,7 +2,11 @@
 
 	function login($conection, $email, $password) {
 
+		$password = mysqli_real_escape_string($conection, $password);
+
 		$password = md5($password);
+
+		$email = mysqli_real_escape_string($conection, $email);
 
 		$query = mysqli_query($conection, 
 				"select * from tblusers 

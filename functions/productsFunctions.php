@@ -20,6 +20,11 @@ function retrieveProducts($conection) {
 
 function createProducts($conection, $product, $price, $description, $category) {
 
+	$product = mysqli_real_escape_string($conection, $product);
+	$price = mysqli_real_escape_string($conection, $price);
+	$description = mysqli_real_escape_string($conection, $description);
+	$category = mysqli_real_escape_string($conection, $category);
+
 	$query = "insert into 
 				tblproducts (
 					productName, 
@@ -38,6 +43,8 @@ function createProducts($conection, $product, $price, $description, $category) {
 
 function searchProduct($conection, $id) {
 
+	$id = mysqli_real_escape_string($conection, $id);
+
 	$query = mysqli_query($conection, 
 		"select * from tblproducts 
 		inner join tblcategorys
@@ -49,6 +56,12 @@ function searchProduct($conection, $id) {
 }
 
 function updateProducts($conection, $id, $product, $price, $description, $category) {
+
+	$id = mysqli_real_escape_string($conection, $id);
+	$product = mysqli_real_escape_string($conection, $product);
+	$price = mysqli_real_escape_string($conection, $price);
+	$description = mysqli_real_escape_string($conection, $description);
+	$category = mysqli_real_escape_string($conection, $category);
 
 	$query = "update tblproducts set 
 				productName = '{$product}',
@@ -62,6 +75,8 @@ function updateProducts($conection, $id, $product, $price, $description, $catego
 }
 
 function deleteProducts($conection, $id) {
+
+	$id = mysqli_real_escape_string($conection, $id);
 
 	$query = "delete from tblproducts where productId = {$id}";
 
