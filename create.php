@@ -8,6 +8,15 @@
 
 	verifyUser();
 
+	$productData = array(
+					"productName" => "", 
+					"productPrice" => "", 
+					"categoryId" => "",
+					"categoryName" => "",
+					"productDescription" => "");
+
+	$selected = "";
+
 	$categorys = retrieveCategorys($conection);
 
 	$product = $_POST['product'];
@@ -32,15 +41,7 @@
 		<h1 align="center">Register Product</h1>
 		<hr />
 		<form action="create.php" method="post" accept-charset="utf-8">
-			<input type="text" class="form-control" name="product" placeholder="Product" required /><br />
-			<input type="number" step="0.01" class="form-control" name="price" placeholder="Price" required /><br />
-			<select class="form-control" name="category_id" required>
-				<option value="">--- CATEGORY ---</option>
-				<?php foreach($categorys as $category): ?>
-				<option value="<?= $category['categoryId']; ?>"><?= $category['categoryName']; ?></option>
-				<?php endforeach ?>
-			</select><br />
-			<textarea name="description" class="form-control" placeholder="Description"></textarea><br />
+			<?php include('template/productForm.php'); ?>
 			<input type="submit" value="Register" class="btn btn-success btn-group-justified" />
 		</form>
 	</div>

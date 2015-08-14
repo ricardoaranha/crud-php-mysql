@@ -40,20 +40,7 @@
 		<hr />
 		<form action="update.php" method="post" accept-charset="utf-8">
 			<input type="hidden" name="id" value="<?= $productData['productId']; ?>" />
-			<input type="text" class="form-control" name="product" value="<?= $productData['productName']; ?>" /><br />
-			<input type="number" step="0.01" class="form-control" name="price" value="<?= $productData['productPrice']; ?>" /><br />
-			<select class="form-control" name="category_id">
-				<?php foreach($categorys as $category):
-
-					if($category['categoryId'] == $productData['categoryId']) {
-						
-						$selected = "selected";
-
-					} ?>
-				<option value="<?= $category['categoryId']; ?>" <?= $selected; ?>><?= $category['categoryName']; ?></option>
-				<?php endforeach ?>
-			</select><br />
-			<textarea name="description" class="form-control"><?= $productData['productDescription']; ?></textarea><br />
+			<?php include('template/productForm.php'); ?>
 			<input type="submit" value="Save" class="btn btn-success btn-group-justified" />
 		</form>
 	</div>
