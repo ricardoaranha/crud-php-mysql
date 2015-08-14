@@ -1,10 +1,9 @@
 <?php
 
-	include('template/header.php');
-	include('config/dbConfig.php');
-	include('functions/productsFunctions.php');
-	include('functions/categorysFunctions.php');
-	include('functions/sessionFunctions.php');
+	require_once('template/header.php');
+	require_once('functions/productsFunctions.php');
+	require_once('functions/categorysFunctions.php');
+	require_once('functions/sessionFunctions.php');
 
 	verifyUser();
 
@@ -41,10 +40,10 @@
 		<h1 align="center">Register Product</h1>
 		<hr />
 		<form action="create.php" method="post" accept-charset="utf-8">
-			<?php include('template/productForm.php'); ?>
+			<?php require_once('template/productForm.php'); ?>
 			<input type="submit" value="Register" class="btn btn-success btn-group-justified" />
 		</form>
 	</div>
 	<div class="col-lg-3"></div>
 
-<?php include('template/footer.php'); ?>
+<?php require_once('template/footer.php'); ?>

@@ -1,8 +1,7 @@
 <?php
 
-	include('config/dbConfig.php');
-	include('functions/loginFunctions.php');
-	include('functions/sessionFunctions.php');
+	require_once('functions/loginFunctions.php');
+	require_once('functions/sessionFunctions.php');
 
 
 	$user = login($conection, $_POST['userEmail'], $_POST['userPassword']);

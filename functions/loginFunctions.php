@@ -1,20 +1,22 @@
 <?php
 
-	function login($conection, $email, $password) {
+require_once('config/dbConfig.php');
 
-		$password = mysqli_real_escape_string($conection, $password);
+function login($conection, $email, $password) {
 
-		$password = md5($password);
+	$password = mysqli_real_escape_string($conection, $password);
 
-		$email = mysqli_real_escape_string($conection, $email);
+	$password = md5($password);
 
-		$query = mysqli_query($conection, 
-				"select * from tblusers 
-					where userEmail = '{$email}' 
-					and userPassword = '{$password}'");
+	$email = mysqli_real_escape_string($conection, $email);
 
-		$result = mysqli_fetch_assoc($query);
+	$query = mysqli_query($conection, 
+			"select * from tblusers 
+				where userEmail = '{$email}' 
+				and userPassword = '{$password}'");
 
-		return $result;
+	$result = mysqli_fetch_assoc($query);
 
-	}
+	return $result;
+
+}

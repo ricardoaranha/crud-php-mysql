@@ -1,6 +1,6 @@
 <?php
 
-	include('functions/sessionFunctions.php');
+	require_once('functions/sessionFunctions.php');
 
 	logout();
 

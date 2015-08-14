@@ -1,4 +1,5 @@
-<?php include('functions/alertsFunctions.php'); 
+<?php 
+	require_once('functions/alertsFunctions.php'); 
 	error_reporting(E_ALL ^ E_NOTICE);
 ?>
 

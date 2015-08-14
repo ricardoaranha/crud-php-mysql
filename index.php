@@ -1,9 +1,6 @@
 <?php
-
-	include('template/header.php');
-	include('config/dbConfig.php');
-	include('functions/sessionFunctions.php'); 
-
+	require_once('template/header.php');
+	require_once('functions/sessionFunctions.php'); 
 ?>
 
 	<div class="col-lg-3"></div>
@@ -23,4 +20,4 @@
 	</div>
 	<div class="col-lg-3"></div>
 
-<?php include('template/footer.php'); ?>
+<?php require_once('template/footer.php'); ?>

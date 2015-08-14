@@ -1,9 +1,8 @@
 <?php 
 
-	include('template/header.php');
-	include('config/dbConfig.php');
-	include('functions/productsFunctions.php');
-	include('functions/sessionFunctions.php');
+	require_once('template/header.php');
+	require_once('functions/productsFunctions.php');
+	require_once('functions/sessionFunctions.php');
 
 	verifyUser();
  
@@ -50,4 +49,4 @@
 		</tbody>
 	</table>	
 
-<?php include('template/footer.php'); ?>
+<?php require_once('template/footer.php'); ?>

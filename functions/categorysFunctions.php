@@ -1,5 +1,7 @@
 <?php
 
+require_once('config/dbConfig.php');
+
 function retrieveCategorys($conection) {
 
 	$categorys = array();
