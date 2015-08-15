@@ -28,6 +28,7 @@
 					<li role="presentation"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 					<li role="presentation"><a href="retrieve.php">Products List</a></li>
 					<li role="presentation"><a href="create.php">Register Products</a></li>
+					<li role="presentation"><a href="contact.php">Contact</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
