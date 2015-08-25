@@ -16,14 +16,14 @@
 
 	$selected = "";
 
-	$categorys = retrieveCategorys($conection);
+	$categorys = retrieveCategorys($connection);
 
 	$product = $_POST['product'];
 	$price = $_POST['price'];
 	$description = $_POST['description'];
 	$category = $_POST['category_id'];
 
-	if(createProducts($conection, $product, $price, $description, $category)) {
+	if(createProducts($connection, $product, $price, $description, $category)) {
 
 		$_SESSION['success'] = "Product was successfully created!";
 

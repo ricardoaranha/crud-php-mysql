@@ -2,11 +2,11 @@
 
 require_once('config/dbConfig.php');
 
-function retrieveCategorys($conection) {
+function retrieveCategorys($connection) {
 
 	$categorys = array();
 
-	$query = mysqli_query($conection, "select * from tblcategorys");
+	$query = mysqli_query($connection, "select * from tblcategorys");
 
 	while($result = mysqli_fetch_assoc($query)) {
 

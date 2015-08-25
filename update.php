@@ -7,13 +7,13 @@
 
 	verifyUser();
 
-	$categorys = retrieveCategorys($conection);
+	$categorys = retrieveCategorys($connection);
 
 	$productId = $_POST['productId'];
 
 	$selected = "";
 
-	$productData = searchProduct($conection, $productId);
+	$productData = searchProduct($connection, $productId);
 
 	$id = $_POST['id'];
 	$product = $_POST['product'];
@@ -21,7 +21,7 @@
 	$description = $_POST['description'];
 	$category = $_POST['category_id'];
 
-	if(updateProducts($conection, $id, $product, $price, $description, $category)) {
+	if(updateProducts($connection, $id, $product, $price, $description, $category)) {
 
 		$_SESSION['success'] = "Product was successfully updated!";
 

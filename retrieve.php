@@ -6,7 +6,7 @@
 
 	verifyUser();
  
-	$products = retrieveProducts($conection);
+	$products = retrieveProducts($connection);
 
 ?>
 

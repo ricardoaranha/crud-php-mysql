@@ -6,7 +6,7 @@
 
 	$id = $_POST['id'];
 
-	deleteProducts($conection, $id);
+	deleteProducts($connection, $id);
 
 	$_SESSION['success'] = "Product was successfully removed!";
 

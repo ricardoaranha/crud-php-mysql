@@ -4,7 +4,7 @@
 	require_once('functions/sessionFunctions.php');
 
 
-	$user = login($conection, $_POST['userEmail'], $_POST['userPassword']);
+	$user = login($connection, $_POST['userEmail'], $_POST['userPassword']);
 
 	if($user == null) {
 

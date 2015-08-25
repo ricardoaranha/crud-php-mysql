@@ -2,10 +2,10 @@
 
 require_once('config/dbConfig.php');
 
-function retrieveProducts($conection) {
+function retrieveProducts($connection) {
 
 	$products = array();
-	$query = mysqli_query($conection, 
+	$query = mysqli_query($connection, 
 		"select * from tblproducts 
 		inner join tblcategorys
 		on tblproducts.categoryId = tblcategorys.categoryId");
@@ -20,12 +20,12 @@ function retrieveProducts($conection) {
 
 }
 
-function createProducts($conection, $product, $price, $description, $category) {
+function createProducts($connection, $product, $price, $description, $category) {
 
-	$product = mysqli_real_escape_string($conection, $product);
-	$price = mysqli_real_escape_string($conection, $price);
-	$description = mysqli_real_escape_string($conection, $description);
-	$category = mysqli_real_escape_string($conection, $category);
+	$product = mysqli_real_escape_string($connection, $product);
+	$price = mysqli_real_escape_string($connection, $price);
+	$description = mysqli_real_escape_string($connection, $description);
+	$category = mysqli_real_escape_string($connection, $category);
 
 	$query = "insert into 
 				tblproducts (
@@ -39,15 +39,15 @@ function createProducts($conection, $product, $price, $description, $category) {
 					'{$description}', 
 					{$category})";
 
-	return mysqli_query($conection, $query);
+	return mysqli_query($connection, $query);
 
 }
 
-function searchProduct($conection, $id) {
+function searchProduct($connection, $id) {
 
-	$id = mysqli_real_escape_string($conection, $id);
+	$id = mysqli_real_escape_string($connection, $id);
 
-	$query = mysqli_query($conection, 
+	$query = mysqli_query($connection, 
 		"select * from tblproducts 
 		inner join tblcategorys
 		on tblproducts.categoryId = tblcategorys.categoryId
@@ -57,13 +57,13 @@ function searchProduct($conection, $id) {
 
 }
 
-function updateProducts($conection, $id, $product, $price, $description, $category) {
+function updateProducts($connection, $id, $product, $price, $description, $category) {
 
-	$id = mysqli_real_escape_string($conection, $id);
-	$product = mysqli_real_escape_string($conection, $product);
-	$price = mysqli_real_escape_string($conection, $price);
-	$description = mysqli_real_escape_string($conection, $description);
-	$category = mysqli_real_escape_string($conection, $category);
+	$id = mysqli_real_escape_string($connection, $id);
+	$product = mysqli_real_escape_string($connection, $product);
+	$price = mysqli_real_escape_string($connection, $price);
+	$description = mysqli_real_escape_string($connection, $description);
+	$category = mysqli_real_escape_string($connection, $category);
 
 	$query = "update tblproducts set 
 				productName = '{$product}',
@@ -72,16 +72,16 @@ function updateProducts($conection, $id, $product, $price, $description, $catego
 				categoryId = {$category}
 				where productId = {$id}";
 
-	return mysqli_query($conection, $query);
+	return mysqli_query($connection, $query);
 
 }
 
-function deleteProducts($conection, $id) {
+function deleteProducts($connection, $id) {
 
-	$id = mysqli_real_escape_string($conection, $id);
+	$id = mysqli_real_escape_string($connection, $id);
 
 	$query = "delete from tblproducts where productId = {$id}";
 
-	return mysqli_query($conection, $query);
+	return mysqli_query($connection, $query);
 
 }

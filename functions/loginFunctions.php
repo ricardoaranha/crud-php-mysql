@@ -2,15 +2,15 @@
 
 require_once('config/dbConfig.php');
 
-function login($conection, $email, $password) {
+function login($connection, $email, $password) {
 
-	$password = mysqli_real_escape_string($conection, $password);
+	$password = mysqli_real_escape_string($connection, $password);
 
 	$password = md5($password);
 
-	$email = mysqli_real_escape_string($conection, $email);
+	$email = mysqli_real_escape_string($connection, $email);
 
-	$query = mysqli_query($conection, 
+	$query = mysqli_query($connection, 
 			"select * from tblusers 
 				where userEmail = '{$email}' 
 				and userPassword = '{$password}'");
